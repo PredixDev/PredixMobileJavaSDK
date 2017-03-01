@@ -2,6 +2,12 @@
 
 The Predix Mobile SDK is a comprehensive suite of tools, frameworks and source examples that will enable and educate you on building mobile applications for the Industrial Internet of Things (IIoT). The Java SDK allows you to build desktop client, IIoT screen client or web based applications that are backed by a database that can replicate data to a host server.
 
+For more information about Predix Mobile and available APIs please visit the main [PredixMobileSDK](https://github.com/PredixDev/PredixMobileSDK) repo and [wiki](https://github.com/PredixDev/PredixMobileSDK/wiki)
+
+## Downloading the SDK.
+
+The SDK can be downloaded from the main [PredixMobileSDK repo](https://github.com/PredixDev/PredixMobileSDK) by visiting the [releases tab](https://github.com/PredixDev/PredixMobileSDK/releases).
+
 ## Configure Maven Proxy and Enable Annotation Processing
 
 If you are running the Java SDK from Intellij or Android Studio:
