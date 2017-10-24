@@ -1,12 +1,12 @@
 # JavaSDK
 
-The Predix Mobile SDK is a comprehensive suite of tools, frameworks and source examples that will enable and educate you on building mobile applications for the Industrial Internet of Things (IIoT). The Java SDK allows you to build desktop client, IIoT screen client or web based applications that are backed by a database that can replicate data to a host server.
+The Predix SDK for Hybrid is a comprehensive suite of tools, frameworks, and source examples that will enable and educate you on building mobile applications for the Industrial Internet of Things (IIoT). The Java SDK allows you to build desktop client, IIoT screen client or web based applications that are backed by a database that can replicate data to a host server.
 
 For more information about Predix Mobile and available APIs please visit the main [PredixMobileSDK](https://github.com/PredixDev/PredixMobileSDK) repo and [wiki](https://github.com/PredixDev/PredixMobileSDK/wiki)
 
 ## Downloading the SDK.
 
-The SDK can be downloaded from the main [PredixMobileSDK repo](https://github.com/PredixDev/PredixMobileSDK) by visiting the [releases tab](https://github.com/PredixDev/PredixMobileSDK/releases).
+You can download the SDK from the main [PredixMobileSDK repo](https://github.com/PredixDev/PredixMobileSDK) by visiting the [releases tab](https://github.com/PredixDev/PredixMobileSDK/releases).
 
 ## Configure Maven Proxy and Enable Annotation Processing
 
@@ -28,11 +28,11 @@ If you are running the Java SDK from Intellij or Android Studio:
 
 ## Create a Custom Service
 
-The Predix Mobile SDK includes the Mobile Client Core Services Framework, a set REST APIs that provide functionality to hybrid or native Mobile apps. In addition to the services in the Mobile Client Core Services Framework, you can create a custom service. The Client SDK consuming application (Predix Mobile App Container) can interact with these services following this general URL structure: `http://pmapi//<parameters>`.
+The Predix SDK for Hybrid includes the Mobile Client Core Services Framework, a set of REST APIs that provide functionality to hybrid or native Mobile apps. In addition to the services in the Mobile Client Core Services Framework, you can create a custom service. The Client SDK consuming application (Predix Mobile App Container) can interact with these services following this general URL structure: `http://pmapi//<parameters>`.
 
-Custom services allow you to extend the REST interface that Predix Mobile provides to a web view. For example, a custom service could provide native integration with a custom tool, such as a Bluetooth sensor.  This would allow a hybrid application to access that sensor from a web application using a standard REST or ajax request.  
+Custom services allow you to extend the REST interface that Predix Mobile provides to a web view. For example, a custom service could provide native integration with a custom tool, such as a Bluetooth sensor.  This allows a hybrid application to access the Bluetooth sensor from a web application using a standard REST or ajax request.  
 
-Here is an example of a simple custom service that you could create with the Predix Mobile Java SDK. With the following code, your web app could send a REST or ajax request to `https://pmapi/sensor/data` to retrieve data from a Bluetooth sensor:
+Here is an example of a simple custom service that you can create with the Predix Mobile Java SDK. With the following code, your web app could send a REST or ajax request to `https://pmapi/sensor/data` to retrieve data from a Bluetooth sensor:
 
 ```
 @RequestMapping("sensor")
@@ -53,7 +53,7 @@ mobileManager.getServiceRouter().registerService(yourCustomServiceClass.class);
  
 ## Service Annotations
 
-Predix Mobile allows you to define and register custom services that are used to extend the functionality of Predix Mobile.  The service-based architecture allows your hybrid apps to request resources as they do for any other REST-based request.  The following Java annotations enable you to tell the SDK how your service should work and when it should be called:
+You can define and register custom services that are used to extend the functionality of Predix Sync service.  The service-based architecture allows your hybrid apps to request resources as they do for any other REST-based request.  The following Java annotations enable you to tell the SDK how your service should work and when it should be called:
 
 - `@RequestMapping`
 - `@RequestParam`
@@ -71,7 +71,7 @@ Use the `@RequestMapping`annotation to map classes and methods to your custom se
 When the `@RequestMapping` annotation appears above a class, that class is mapped to the service class that you registered.
 
 For example, the following code routes `https://pmapi/myServiceClass/` to the `CustomService` class.
-```
+o```
 @RequestMapping("myServiceClass")
 public class CustomService {}
 ```
@@ -129,7 +129,7 @@ public class CustomService {
 
 - `method`:  The HTTP method your endpoint is expecting: `RequestMethod.GET`, `RequestMethod.POST`, `RequestMethod.PUT`, `RequestMethod.DELETE`.  
 
-   Methods can be chained togeather so one method can handle multiple HTTP Methods.  If a given request does not match the endpoint's supported methods the SDK will return the request with a 405 status code (Method Not Supported).
+You can chain together methods so that one method can handle multiple HTTP Methods.  If a given request does not match the endpoint's supported methods, the SDK will return the request with a 405 status code (Method Not Supported).
 
 
 ### - `@RequestMapping` Method-level Annotation Value Options
@@ -206,7 +206,7 @@ public class CustomService {
 
 ## About the `@RequestCompleteOnReturn` Annotation 
 
-Use the `@RequestCompleteOnReturn` annotation to tell the ServiceRouter that the request should be marked completed and returned to the caller when a method/service endpoint has finished execution. This can be useful if a service does not return data in the body of the response.  Here is an example:
+Use the `@RequestCompleteOnReturn` annotation to tell the ServiceRouter that the request should be marked completed and returned to the caller when a method/service endpoint has finished execution. This is useful when a service does not return data in the body of the response.  Here is an example:
 
 ```
 @RequestMapping("myServiceClass")
